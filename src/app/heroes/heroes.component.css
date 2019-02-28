@@ -49,3 +49,27 @@
   margin-right: .8em;
   border-radius: 4px 0 0 4px;
 }
+
+a.add {
+  font-family: Arial;
+  background-color: #eee;
+  font-size: 15px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  text-decoration: none;
+}
+a.add:hover {
+  background-color: #cfd8dc;
+}
+a.add:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+a.add {
+  color: #888;
+  margin-bottom: 12px;
+}

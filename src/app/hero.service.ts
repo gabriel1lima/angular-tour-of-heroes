@@ -21,5 +21,10 @@ export class HeroService {
     return of(HEROES.find(hero => hero.id === id));
   }
 
+  addHero(hero: Hero) {
+    HEROES.push(hero)
+    console.log(HEROES)
+  }
+
   constructor(private messageService: MessageService) { }
 }
