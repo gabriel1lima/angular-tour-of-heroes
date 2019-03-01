@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from "@angular/core";
 import { HeroService } from "../hero.service";
 import { Hero } from "../hero";
 import { Router } from "@angular/router";
+import { Location } from "@angular/common";
 
 @Component({
   selector: "app-add-hero",
@@ -11,7 +12,11 @@ import { Router } from "@angular/router";
 export class AddHeroComponent implements OnInit {
   @Input() hero: Hero = { id: 0, name: "" };
 
-  constructor(private heroService: HeroService, private router: Router) {}
+  constructor(
+    private heroService: HeroService,
+    private router: Router,
+    private location: Location
+  ) {}
 
   ngOnInit() {}
 
@@ -22,5 +27,9 @@ export class AddHeroComponent implements OnInit {
     } else {
       alert("Insira um nome!");
     }
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
