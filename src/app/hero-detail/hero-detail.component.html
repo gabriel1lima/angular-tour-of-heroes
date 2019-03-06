@@ -4,10 +4,11 @@
     <span class="text">id: </span>
     {{hero.id}}
   </div>
-  
+
   <div>
-    <span class="text">name: </span><input [(ngModel)]="hero.name" placeholder="name"/>
+    <span class="text">name: </span><input [(ngModel)]="hero.name" placeholder="name" />
   </div>
   <br>
   <button (click)="goBack()">Back</button>
+  <button style="margin-left: 10px; background-color: red; color: white" (click)="deleteHero(hero)">Delete</button>
 </div>
