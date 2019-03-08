@@ -1,7 +1,7 @@
 <br>
 <div>
-  <span class="text">name: </span><input [(ngModel)]="hero.name" placeholder="name" />
+  <span class="text">name: </span><input #heroName placeholder="name" />
 </div>
 <br>
 <button (click)="goBack()">Back</button>
-<button style="margin-left: 10px; background-color: green; color: white" (click)="addHero()">Add</button>
+<button style="margin-left: 10px; background-color: green; color: white" (click)="addHero(heroName.value); heroName.value=''">Add</button>

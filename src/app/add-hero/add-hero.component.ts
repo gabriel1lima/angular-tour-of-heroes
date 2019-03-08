@@ -10,7 +10,7 @@ import { Location } from "@angular/common";
   styleUrls: ["./add-hero.component.css"]
 })
 export class AddHeroComponent implements OnInit {
-  @Input() hero: Hero = { id: 0, name: "" };
+  heroes: Hero[];
 
   constructor(
     private heroService: HeroService,
@@ -20,13 +20,13 @@ export class AddHeroComponent implements OnInit {
 
   ngOnInit() {}
 
-  addHero(): void {
-    if (this.hero.name != "") {
-      this.heroService.addHero(this.hero);
-      this.router.navigate(["/heroes"]);
-    } else {
-      alert("Insira um nome!");
-    }
+  addHero(name: string): void {
+    name = name.trim();
+    if (!name) { return; }
+    this.heroService.addHero({ name } as Hero)
+      .subscribe(hero => {
+        this.heroes.push(hero);
+      });
   }
 
   goBack(): void {

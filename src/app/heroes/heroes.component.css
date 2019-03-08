@@ -77,3 +77,11 @@ a.add {
   color: #888;
   margin-bottom: 12px;
 }
+
+button.delete {
+  position: relative;
+  left: 194px;
+  top: -32px;
+  background-color: gray !important;
+  color: white;
+}

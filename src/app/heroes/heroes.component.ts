@@ -15,6 +15,11 @@ export class HeroesComponent implements OnInit {
   ngOnInit() {
     this.getHeroes();
   }
+  
+  deleteHero(hero: Hero): void {
+    this.heroes = this.heroes.filter(h => h !== hero);
+    this.heroService.deleteHero(hero).subscribe();
+  }
  
   getHeroes(): void {
     this.heroService.getHeroes()

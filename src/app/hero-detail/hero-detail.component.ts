@@ -30,9 +30,9 @@ export class HeroDetailComponent implements OnInit {
     this.heroService.getHero(id).subscribe(hero => (this.hero = hero));
   }
 
-  deleteHero(hero: Hero): void {
-    this.heroService.deleteHero(hero);
-    this.router.navigate(["/heroes"]);
+  save(): void {
+    this.heroService.updateHero(this.hero)
+      .subscribe(() => this.goBack());
   }
 
   goBack(): void {
